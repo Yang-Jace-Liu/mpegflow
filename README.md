@@ -54,7 +54,7 @@ Option | Description
 
 Feel free to copy-paste and run the examples above. More runnable examples are in ```examples/extract_motion_vectors.sh``` and ```examples/vis_motion_vectors.sh```. Feel free to use ```vis.cpp``` and ```examples/vis_hue.m``` as examples of parsing **mpegflow** output. ```examples/vis_hue``` can also be used to produce hue flow visualizations like above.
 
-# Building from source
+# Building from source (Windows)
 **mpegflow** depends only on a recent FFmpeg, **vis** depends on FFmpeg, OpenCV and libpng. The tools are known to work with FFmpeg 3.1 and OpenCV 3.1. 
 
 Once the dependencies are visible to g++, run:
@@ -79,4 +79,14 @@ nmake mpegflow.exe FFMPEG_DIR=dependencies\ffmpeg-3.0.1-win64-dev\ffmpeg-3.0.1-w
 # nmake vis.exe OPENCV_DIR=dependencies\opencv-3.1.0\opencv\build\x64\vc14
 ```
 
-6. The Windows build is not fully static. You need to keep `avutil-54.dll`, `avformat-56.dll`, `avcodec-56.dll`, `swresample-2.dll` (for **mpegflow**) and `opencv_world310.dll` (for **vis**) in the same directory as the binary. Note that the instructions and the Makefile assume x64 machine architecture.
+5. The Windows build is not fully static. You need to keep `avutil-54.dll`, `avformat-56.dll`, `avcodec-56.dll`, `swresample-2.dll` (for **mpegflow**) and `opencv_world310.dll` (for **vis**) in the same directory as the binary. Note that the instructions and the Makefile assume x64 machine architecture.
+
+# Building from source (Linux)
+
+```bash
+git clone https://github.com/Yang-Jace-Liu/mpegflow
+cd mpegflow && git clone --branch n3.0.1 --depth=1 https://github.com/FFmpeg/FFmpeg
+cd FFmpeg && ./configure --prefix=../dependencies/ 
+make -j8 && make install
+cd .. && make
+```
