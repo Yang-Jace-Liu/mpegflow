@@ -88,5 +88,6 @@ git clone https://github.com/Yang-Jace-Liu/mpegflow
 cd mpegflow && git clone --branch n3.0.1 --depth=1 https://github.com/FFmpeg/FFmpeg
 cd FFmpeg && ./configure --prefix=../dependencies/ 
 make -j8 && make install
+sudo apt install liblzma-dev libva-dev
 cd .. && make
 ```

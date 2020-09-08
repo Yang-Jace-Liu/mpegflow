@@ -1,5 +1,5 @@
 CFLAGS = -O3 -D__STDC_CONSTANT_MACROS
-LDFLAGS = -lswscale -lavdevice -lavformat -lavcodec -lswresample -lavutil -lpthread -lbz2 -lz -lc -lrt -lva
+LDFLAGS = -lswscale -lavdevice -lavformat -lavcodec -lswresample -lavutil -lpthread -lbz2 -lz -lc -lrt -lva -llzma
 INSTALLED_DEPS = -Idependencies/include -Ldependencies/lib
 
 mpegflow: mpegflow.cpp
